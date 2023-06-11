@@ -68,7 +68,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
       <h1 className="px-4 font-bold text-2xl">Students</h1>
       <section className="flex justify-between gap-4 md:gap-0 flex-col md:flex-row md:items-center">
         <p className="pl-4 font-semibold">Filter By : </p>
-        <section className="flex gap-4 md:gap-0 md:justify-start lg:justify-between flex-col md:flex-row px-4 w-full md:w-[50%] justify-evenly md:items-center">
+        <section className="flex gap-4 md:gap-0 justify-between flex-col md:flex-row px-4 w-full lg:w-[50%] md:items-center">
           <article className="flex my-2 md:m-0 gap-2 justify-between items-center">
             <label htmlFor="gender-filter" className="mr-2 font-semibold">
               Gender
@@ -125,7 +125,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
           <tbody>
             {/* row 1 */}
             {filteredStudents.length > 0 ? (
-              shuffledItems(filteredStudents).map((student, index) => (
+              filteredStudents.map((student, index) => (
                 <tr key={index}>
                   <th>{index + 1}</th>
                   <td>{student.name}</td>
