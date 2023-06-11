@@ -8,7 +8,7 @@ function App() {
   return (
     <main>
       <Header />
-      <article className="container w-full gap-8 p-4 grid md:grid-rows-[0.5fr,0.5fr] grid-cols-1 grid-rows-[1fr,0.3fr,0.3fr,0.3fr] md:grid-cols-[1.4fr,1fr,1fr] mx-auto mt-4">
+      <article className="container w-full gap-8 py-4 p-4 md:px-12 lg:px-16 grid lg:grid-rows-[0.5fr,0.5fr] grid-cols-1 grid-rows-[1fr,0.3fr,0.3fr,0.3fr] lg:grid-cols-[1.4fr,1fr,1fr] mx-auto mt-4">
         <section className="md:col-span-3 w-full h-full">
           <StudentTable coloums={coloumns} students={students}></StudentTable>
         </section>
