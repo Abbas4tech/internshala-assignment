@@ -62,3 +62,9 @@ export const students = [
 ];
 
 export const coloumns: string[] = ["No.", "Name", "Date of Birth", "Gender"];
+
+export const shuffledItems = <T>(data: T[]): T[] =>
+  data
+    .map((e) => ({ e, sortKey: Math.random() }))
+    .sort((a, b) => a.sortKey - b.sortKey)
+    .map(({ e }) => e);

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import DateRangePicker from "./DatePicket";
+import { shuffledItems } from "../model/students.model";
 
 interface Student {
   name: string;
@@ -65,9 +66,9 @@ const StudentTable: React.FC<StudentTableProps> = ({
   return (
     <>
       <h1 className="px-4 font-bold text-2xl">Students</h1>
-      <section className="flex justify-between items-center">
+      <section className="flex justify-between gap-4 md:gap-0 flex-col md:flex-row md:items-center">
         <p className="pl-4 font-semibold">Filter By : </p>
-        <section className="flex px-4 w-[50%] justify-evenly items-center">
+        <section className="flex gap-4 md:gap-0 flex-col md:flex-row px-4 w-full md:w-[50%] justify-evenly md:items-center">
           <article className="flex gap-2 justify-between items-center">
             <label htmlFor="gender-filter" className="mr-2 font-semibold">
               Gender
@@ -76,7 +77,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
               id="gender-filter"
               value={genderFilter}
               onChange={handleGenderFilterChange}
-              className="select select-bordered w-full max-w-xs"
+              className="select select-bordered select-sm md:select-md w-full max-w-xs"
             >
               <option value="">All</option>
               <option value="male">Male</option>
@@ -124,7 +125,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
           <tbody>
             {/* row 1 */}
             {filteredStudents.length > 0 ? (
-              filteredStudents.map((student, index) => (
+              shuffledItems(filteredStudents).map((student, index) => (
                 <tr key={index}>
                   <th>{index + 1}</th>
                   <td>{student.name}</td>
