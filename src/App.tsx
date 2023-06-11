@@ -8,15 +8,17 @@ function App() {
   return (
     <main>
       <Header />
-      <article className="container h-screen gap-8 p-4 grid grid-rows-[0.5fr,0.5fr] grid-cols-[0.3fr,0.3fr,0.4fr] mx-auto">
-        <section className="col-span-3">
+      <article className="container w-full gap-8 p-4 grid md:grid-rows-[0.5fr,0.5fr] grid-cols-1 grid-rows-[1fr,0.3fr,0.3fr,0.3fr] md:grid-cols-[1.4fr,1fr,1fr] mx-auto mt-4">
+        <section className="md:col-span-3 w-full h-full">
           <StudentTable coloums={coloumns} students={students}></StudentTable>
         </section>
-
+        <section>
+          <Chart></Chart>
+        </section>
         {shuffledItems(students)
           .filter((_, i) => i <= 1)
           .map((_, i) => (
-            <section key={i}>
+            <section className="w-full h-full" key={i}>
               <Card
                 name={_.name}
                 dateOfBirth={_.dateOfBirth}
@@ -24,9 +26,6 @@ function App() {
               />
             </section>
           ))}
-        <section>
-          <Chart></Chart>
-        </section>
       </article>
     </main>
   );

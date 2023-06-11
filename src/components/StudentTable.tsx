@@ -68,8 +68,8 @@ const StudentTable: React.FC<StudentTableProps> = ({
       <h1 className="px-4 font-bold text-2xl">Students</h1>
       <section className="flex justify-between gap-4 md:gap-0 flex-col md:flex-row md:items-center">
         <p className="pl-4 font-semibold">Filter By : </p>
-        <section className="flex gap-4 md:gap-0 flex-col md:flex-row px-4 w-full md:w-[50%] justify-evenly md:items-center">
-          <article className="flex gap-2 justify-between items-center">
+        <section className="flex gap-4 md:gap-0 md:justify-start lg:justify-between flex-col md:flex-row px-4 w-full md:w-[50%] justify-evenly md:items-center">
+          <article className="flex my-2 md:m-0 gap-2 justify-between items-center">
             <label htmlFor="gender-filter" className="mr-2 font-semibold">
               Gender
             </label>
@@ -77,7 +77,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
               id="gender-filter"
               value={genderFilter}
               onChange={handleGenderFilterChange}
-              className="select select-bordered select-sm md:select-md w-full max-w-xs"
+              className="select select-bordered select-sm md:select-md w-full max-w-[10rem] md:max-w-xs"
             >
               <option value="">All</option>
               <option value="male">Male</option>
@@ -86,9 +86,9 @@ const StudentTable: React.FC<StudentTableProps> = ({
           </article>
           <div
             ref={pickerRef}
-            className="relative font-semibold flex gap-2 items-center"
+            className="relative md:justify-start justify-between lg:justify-between flex font-semibold mb-4 md:m-0 gap-2 items-center"
           >
-            Date Range
+            <p> Date Range</p>
             <div>
               <button type="button" onClick={handleButtonClick} className="btn">
                 {endDate === null && startDate === null

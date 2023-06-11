@@ -7,7 +7,7 @@ interface StudentData {
 const Card = ({ name, dateOfBirth, gender }: StudentData) => {
   return (
     <>
-      <div className="card w-full h-full bg-primary text-primary-content">
+      <div className="card w-full max-h-56 md:max-h-full h-full bg-primary text-primary-content">
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <p>DOB : {new Date(dateOfBirth).toDateString()}</p>
